@@ -15,79 +15,102 @@
 
 <body>
 
-    <header>
-        <h1>CryptoVision AI</h1>
-        <p>AI Powered Cryptocurrency Analysis Platform</p>
-    </header>
+    <nav class="navbar">
 
-    <main>
+        <div class="logo">
+            CryptoVision AI
+        </div>
 
-        <section class="dashboard">
+        <div class="live-status">
+            <span class="live-dot"></span>
+            LIVE
+        </div>
 
-            <div class="card">
-                <h2>BTC Price</h2>
-                <p id="btc-price">$0</p>
-            </div>
+    </nav>
 
-            <div class="card">
-                <h2>24H Change</h2>
-                <p id="btc-change">0%</p>
-            </div>
+    <section class="hero">
 
-            <div class="card">
-                <h2>Trend</h2>
-                <p id="trend">Loading...</p>
-            </div>
+        <h2>BTCUSDT</h2>
 
-            <div class="card">
-                <h2>Signal</h2>
-                <p id="signal">WAIT</p>
-            </div>
+        <h1 id="btc-price">$0</h1>
 
-        </section>
+        <p id="btc-change">0%</p>
 
-        <section class="analysis">
+    </section>
+
+    <section class="main-grid">
+
+        <section class="chart-area">
 
             <div class="card">
-                <h3>RSI</h3>
-                <p id="rsi">0</p>
-            </div>
 
-            <div class="card">
-                <h3>SMA20</h3>
-                <p id="sma20">0</p>
-            </div>
+                <h2>Market Chart</h2>
 
-            <div class="card">
-                <h3>SMA50</h3>
-                <p id="sma50">0</p>
-            </div>
-
-        </section>
-
-        <section class="chart-section">
-
-            <h2>BTC Price Chart</h2>
-
-            <div class="card">
                 <canvas id="btcChart"></canvas>
+
             </div>
 
         </section>
 
-        <section class="ai-comment">
+        <aside class="side-panel">
+
+            <div class="card">
+
+                <h3>Market Status</h3>
+
+                <p id="trend">Loading...</p>
+
+            </div>
+
+            <div class="card">
+
+                <h3>Signal</h3>
+
+                <p id="signal">WAIT</p>
+
+            </div>
+
+            <div class="card">
+
+                <h3>RSI</h3>
+
+                <p id="rsi">0</p>
+
+            </div>
+
+            <div class="card">
+
+                <h3>SMA20</h3>
+
+                <p id="sma20">0</p>
+
+            </div>
+
+            <div class="card">
+
+                <h3>SMA50</h3>
+
+                <p id="sma50">0</p>
+
+            </div>
+
+        </aside>
+
+    </section>
+
+    <section class="ai-section">
+
+        <div class="card">
 
             <h2>AI Market Analysis</h2>
 
-            <div class="card">
-                <p id="comment">
-                    Waiting for analysis...
-                </p>
-            </div>
+            <p id="comment">
+                Waiting for analysis...
+            </p>
 
-        </section>
+        </div>
 
-    </main>
+    </section>
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="app.js"></script>
