@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CryptoVision AI</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>CryptoVision AI</h1>
+        <p>AI Powered Cryptocurrency Analysis Platform</p>
+    </header>
+
+    <main>
+
+        <section class="dashboard">
+
+            <div class="card">
+                <h2>BTC Price</h2>
+                <p id="btc-price">$0</p>
+            </div>
+
+            <div class="card">
+                <h2>24H Change</h2>
+                <p id="btc-change">0%</p>
+            </div>
+
+            <div class="card">
+                <h2>Trend</h2>
+                <p id="trend">Loading...</p>
+            </div>
+
+            <div class="card">
+                <h2>Signal</h2>
+                <p id="signal">WAIT</p>
+            </div>
+
+        </section>
+
+        <section class="analysis">
+
+            <div class="card">
+                <h3>RSI</h3>
+                <p id="rsi">0</p>
+            </div>
+
+            <div class="card">
+                <h3>SMA20</h3>
+                <p id="sma20">0</p>
+            </div>
+
+            <div class="card">
+                <h3>SMA50</h3>
+                <p id="sma50">0</p>
+            </div>
+
+        </section>
+
+        <section class="chart-section">
+
+            <h2>BTC Price Chart</h2>
+
+            <div class="card">
+                <canvas id="btcChart"></canvas>
+            </div>
+
+        </section>
+
+        <section class="ai-comment">
+
+            <h2>AI Market Analysis</h2>
+
+            <div class="card">
+                <p id="comment">
+                    Waiting for analysis...
+                </p>
+            </div>
+
+        </section>
+
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="app.js"></script>
+
+</body>
+
+</html>
