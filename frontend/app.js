@@ -1,9 +1,14 @@
+let selectedCoin = "BTCUSDT";
+
+let chartInstance;
+
+
 async function getBTCData() {
 
     try {
 
         const response = await fetch(
-            "https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT"
+            `https://api.binance.com/api/v3/ticker/24hr?symbol=${selectedCoin}`
         );
 
         const data = await response.json();
@@ -20,7 +25,13 @@ async function getBTCData() {
         document.getElementById("btc-change").innerText =
             change + "%";
 
-        if (change > 0) {
+        document.getElementById("coin-name").innerText =
+            selectedCoin;
+
+        if (Number(change) > 0) {
+
+            document.getElementById("btc-change").style.color =
+                "#10B981";
 
             document.getElementById("trend").innerText =
                 "Bullish 📈";
@@ -28,13 +39,15 @@ async function getBTCData() {
         }
         else {
 
+            document.getElementById("btc-change").style.color =
+                "#EF4444";
+
             document.getElementById("trend").innerText =
                 "Bearish 📉";
 
         }
 
     }
-
     catch (error) {
 
         console.error(error);
@@ -42,6 +55,7 @@ async function getBTCData() {
     }
 
 }
+
 
 function calculateRSI(prices, period = 14) {
 
@@ -88,6 +102,7 @@ function calculateRSI(prices, period = 14) {
 
 }
 
+
 function calculateSMA(prices, period) {
 
     if (prices.length < period) {
@@ -109,12 +124,53 @@ function calculateSMA(prices, period) {
 
 }
 
+
+function calculateAIScore(
+    rsi,
+    sma20,
+    sma50
+) {
+
+    let score = 50;
+
+    if (Number(rsi) > 60) {
+
+        score += 20;
+
+    }
+    else if (Number(rsi) < 40) {
+
+        score -= 20;
+
+    }
+
+    if (Number(sma20) > Number(sma50)) {
+
+        score += 25;
+
+    }
+    else {
+
+        score -= 25;
+
+    }
+
+    score = Math.max(
+        0,
+        Math.min(100, score)
+    );
+
+    return score;
+
+}
+
+
 async function loadChart() {
 
     try {
 
         const response = await fetch(
-            "https://api.binance.com/api/v3/klines?symbol=BTCUSDT&interval=1h&limit=60"
+            `https://api.binance.com/api/v3/klines?symbol=${selectedCoin}&interval=1h&limit=60`
         );
 
         const data =
@@ -156,13 +212,17 @@ async function loadChart() {
         document.getElementById("sma50").innerText =
             sma50;
 
+
         if (Number(sma20) > Number(sma50)) {
 
             document.getElementById("signal").innerText =
                 "BUY";
 
+            document.getElementById("signal").style.color =
+                "#10B981";
+
             document.getElementById("comment").innerText =
-                "Bullish trend detected. SMA20 is above SMA50.";
+                "Bullish trend detected. SMA20 is above SMA50. Momentum remains strong.";
 
         }
         else if (Number(sma20) < Number(sma50)) {
@@ -170,8 +230,11 @@ async function loadChart() {
             document.getElementById("signal").innerText =
                 "SELL";
 
+            document.getElementById("signal").style.color =
+                "#EF4444";
+
             document.getElementById("comment").innerText =
-                "Bearish trend detected. SMA20 is below SMA50.";
+                "Bearish trend detected. SMA20 is below SMA50. Momentum remains weak.";
 
         }
         else {
@@ -179,12 +242,68 @@ async function loadChart() {
             document.getElementById("signal").innerText =
                 "WAIT";
 
+            document.getElementById("signal").style.color =
+                "#F59E0B";
+
         }
 
-        const ctx =
-            document.getElementById("btcChart");
 
-        new Chart(ctx, {
+        const score =
+            calculateAIScore(
+                rsi,
+                sma20,
+                sma50
+            );
+
+        const aiScoreElement =
+            document.getElementById(
+                "ai-score"
+            );
+
+        aiScoreElement.innerText =
+            score + "/100";
+
+        aiScoreElement.classList.remove(
+            "score-high",
+            "score-medium",
+            "score-low"
+        );
+
+        if (score >= 75) {
+
+            aiScoreElement.classList.add(
+                "score-high"
+            );
+
+        }
+        else if (score >= 50) {
+
+            aiScoreElement.classList.add(
+                "score-medium"
+            );
+
+        }
+        else {
+
+            aiScoreElement.classList.add(
+                "score-low"
+            );
+
+        }
+
+
+        const ctx =
+            document.getElementById(
+                "btcChart"
+            );
+
+        if (chartInstance) {
+
+            chartInstance.destroy();
+
+        }
+
+        chartInstance = new Chart(ctx, {
 
             type: "line",
 
@@ -195,20 +314,76 @@ async function loadChart() {
                 datasets: [
 
                     {
-                        label: "BTC Price",
+
+                        label: selectedCoin,
+
                         data: prices,
+
+                        borderColor:
+                            "#3B82F6",
+
+                        backgroundColor:
+                            "rgba(59,130,246,0.1)",
+
                         borderWidth: 3,
-                        tension: 0.3
+
+                        tension: 0.4,
+
+                        fill: true
+
                     }
 
                 ]
+
+            },
+
+            options: {
+
+                responsive: true,
+
+                plugins: {
+
+                    legend: {
+
+                        labels: {
+
+                            color: "#ffffff"
+
+                        }
+
+                    }
+
+                },
+
+                scales: {
+
+                    x: {
+
+                        ticks: {
+
+                            color: "#94A3B8"
+
+                        }
+
+                    },
+
+                    y: {
+
+                        ticks: {
+
+                            color: "#94A3B8"
+
+                        }
+
+                    }
+
+                }
 
             }
 
         });
 
     }
-
     catch (error) {
 
         console.error(error);
@@ -217,5 +392,30 @@ async function loadChart() {
 
 }
 
+
 getBTCData();
+
 loadChart();
+
+
+document
+    .getElementById("coinSelect")
+    .addEventListener("change", (e) => {
+
+        selectedCoin =
+            e.target.value;
+
+        getBTCData();
+
+        loadChart();
+
+    });
+
+
+setInterval(() => {
+
+    getBTCData();
+
+    loadChart();
+
+}, 30000);
