@@ -2,25 +2,35 @@
 <html lang="tr">
 
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>CryptoVision AI</title>
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
 
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+    <title>
+        CryptoVision AI Pro V6
+    </title>
+
+    <link rel="stylesheet"
+        href="css/style.css">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
 
-    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    
+    <!-- NAVBAR -->
 
     <nav class="navbar">
 
         <div class="logo">
-            CryptoVision AI
+
+            CryptoVision AI Pro
+
         </div>
 
         <div class="coin-selector">
@@ -46,29 +56,51 @@
 
     </nav>
 
-    
+    <!-- HERO -->
 
     <section class="hero">
 
-        <h2 id="coin-name">BTCUSDT</h2>
+        <h2 id="coin-name">
 
-        <h1 id="btc-price">$0</h1>
+            BTCUSDT
 
-        <p id="btc-change">0%</p>
+        </h2>
+
+        <h1 id="btc-price">
+
+            $0
+
+        </h1>
+
+        <p id="btc-change">
+
+            0%
+
+        </p>
+
+        <p id="last-update">
+
+            Last Update: --
+
+        </p>
 
     </section>
 
-    
+    <!-- DASHBOARD -->
 
     <section class="main-grid">
 
-        
+        <!-- CHART -->
 
         <section class="chart-area">
 
             <div class="card">
 
-                <h2>Market Chart</h2>
+                <h2>
+
+                    Market Chart
+
+                </h2>
 
                 <canvas id="btcChart"></canvas>
 
@@ -76,73 +108,94 @@
 
         </section>
 
-        
+        <!-- SIDE PANEL -->
 
         <aside class="side-panel">
 
             <div class="card">
-
                 <h3>Market Status</h3>
-
                 <p id="trend">Loading...</p>
-
             </div>
 
             <div class="card">
-
                 <h3>Signal</h3>
-
                 <p id="signal">WAIT</p>
-
             </div>
 
             <div class="card">
-
                 <h3>RSI</h3>
-
                 <p id="rsi">0</p>
-
             </div>
 
             <div class="card">
-
                 <h3>SMA20</h3>
-
                 <p id="sma20">0</p>
-
             </div>
 
             <div class="card">
-
                 <h3>SMA50</h3>
-
                 <p id="sma50">0</p>
-
             </div>
 
             <div class="card">
-
                 <h3>AI Score</h3>
-
                 <p id="ai-score">0/100</p>
+            </div>
 
+            <div class="card">
+                <h3>Fear & Greed</h3>
+                <p id="fear-greed">Loading...</p>
             </div>
 
         </aside>
 
     </section>
 
-    
+    <!-- AI PREDICTION -->
 
-    <section class="ai-section">
+    <section class="prediction-section">
 
         <div class="card">
 
-            <h2>AI Market Analysis</h2>
+            <h2>
 
-            <p id="comment">
+                AI Prediction
 
-                Waiting for analysis...
+            </h2>
+
+            <p>
+
+                Probability:
+
+                <span id="prediction-probability">
+
+                    0%
+
+                </span>
+
+            </p>
+
+            <p>
+
+                Prediction:
+
+                <span id="prediction-direction">
+
+                    Waiting...
+
+                </span>
+
+            </p>
+
+            <p>
+
+                Target Price:
+
+                <span id="target-price">
+
+                    $0
+
+                </span>
 
             </p>
 
@@ -150,13 +203,37 @@
 
     </section>
 
-    
+    <!-- TRADING SIGNALS -->
+
+    <section class="signals-section">
+
+        <div class="card">
+
+            <h2>
+
+                Trading Signals
+
+            </h2>
+
+            <div id="signals-container">
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- MARKET OVERVIEW -->
 
     <section class="market-overview">
 
         <div class="card">
 
-            <h2>Top Market Overview</h2>
+            <h2>
+
+                Top Market Overview
+
+            </h2>
 
             <table>
 
@@ -174,12 +251,6 @@
 
                 <tbody id="marketTable">
 
-                    <tr>
-                        <td>BTC</td>
-                        <td>Loading...</td>
-                        <td>Loading...</td>
-                    </tr>
-
                 </tbody>
 
             </table>
@@ -188,9 +259,140 @@
 
     </section>
 
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- TOP GAINERS -->
 
-    <script src="app.js"></script>
+    <section class="gainers-section">
+
+        <div class="card">
+
+            <h2>
+
+                Top Gainers
+
+            </h2>
+
+            <div id="gainers-list">
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- TOP LOSERS -->
+
+    <section class="losers-section">
+
+        <div class="card">
+
+            <h2>
+
+                Top Losers
+
+            </h2>
+
+            <div id="losers-list">
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- WHALE ACTIVITY -->
+
+    <section class="whale-section">
+
+        <div class="card">
+
+            <h2>
+
+                Whale Activity
+
+            </h2>
+
+            <div id="whale-activity">
+
+                Loading...
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- NEWS -->
+
+    <section class="news-section">
+
+        <div class="card">
+
+            <h2>
+
+                Market News
+
+            </h2>
+
+            <div id="news-list">
+
+                Loading...
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- PORTFOLIO -->
+
+    <section class="portfolio-section">
+
+        <div class="card">
+
+            <h2>
+
+                Portfolio Simulator
+
+            </h2>
+
+            <div id="portfolio">
+
+                Portfolio Loading...
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- AI ANALYSIS -->
+
+    <section class="ai-section">
+
+        <div class="card">
+
+            <h2>
+
+                AI Market Analysis
+
+            </h2>
+
+            <p id="comment">
+
+                Waiting for analysis...
+
+            </p>
+
+        </div>
+
+    </section>
+
+    <script
+        src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script
+        type="module"
+        src="js/app.js"></script>
 
 </body>
 

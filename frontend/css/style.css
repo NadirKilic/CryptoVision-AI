@@ -1,0 +1,564 @@
+/* ===================================
+   RESET
+=================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+
+    font-family:'Inter',sans-serif;
+
+    background:#0b1120;
+
+    color:#ffffff;
+
+    min-height:100vh;
+}
+
+/* ===================================
+   SCROLLBAR
+=================================== */
+
+::-webkit-scrollbar{
+    width:8px;
+}
+
+::-webkit-scrollbar-track{
+    background:#111827;
+}
+
+::-webkit-scrollbar-thumb{
+    background:#374151;
+    border-radius:20px;
+}
+
+/* ===================================
+   NAVBAR
+=================================== */
+
+.navbar{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:20px 40px;
+
+    background:#111827;
+
+    border-bottom:1px solid #1f2937;
+
+    position:sticky;
+
+    top:0;
+
+    z-index:100;
+}
+
+.logo{
+
+    font-size:24px;
+
+    font-weight:700;
+
+    color:#10B981;
+}
+
+.coin-selector select{
+
+    padding:10px 15px;
+
+    background:#1f2937;
+
+    color:white;
+
+    border:none;
+
+    border-radius:10px;
+
+    cursor:pointer;
+}
+
+.live-status{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    font-size:14px;
+}
+
+.live-dot{
+
+    width:10px;
+
+    height:10px;
+
+    border-radius:50%;
+
+    background:#10B981;
+
+    animation:pulse 1.5s infinite;
+}
+
+@keyframes pulse{
+
+    0%{
+        transform:scale(1);
+        opacity:1;
+    }
+
+    50%{
+        transform:scale(1.5);
+        opacity:.5;
+    }
+
+    100%{
+        transform:scale(1);
+        opacity:1;
+    }
+
+}
+
+/* ===================================
+   HERO
+=================================== */
+
+.hero{
+
+    text-align:center;
+
+    padding:50px 20px;
+}
+
+.hero h2{
+
+    color:#9ca3af;
+
+    margin-bottom:10px;
+}
+
+.hero h1{
+
+    font-size:58px;
+
+    margin-bottom:10px;
+}
+
+.hero p{
+
+    margin-top:8px;
+}
+
+#btc-change{
+
+    font-size:24px;
+
+    font-weight:700;
+}
+
+/* ===================================
+   MAIN GRID
+=================================== */
+
+.main-grid{
+
+    display:grid;
+
+    grid-template-columns:2fr 1fr;
+
+    gap:25px;
+
+    padding:25px;
+}
+
+/* ===================================
+   CARD
+=================================== */
+
+.card{
+
+    background:rgba(17,24,39,.85);
+
+    backdrop-filter:blur(12px);
+
+    border:1px solid #1f2937;
+
+    border-radius:20px;
+
+    padding:25px;
+
+    transition:.3s;
+}
+
+.card:hover{
+
+    transform:translateY(-4px);
+
+    border-color:#10B981;
+}
+
+.card h2{
+
+    margin-bottom:20px;
+
+    color:#10B981;
+}
+
+.card h3{
+
+    margin-bottom:10px;
+}
+
+/* ===================================
+   CHART
+=================================== */
+
+.chart-area canvas{
+
+    width:100% !important;
+
+    height:500px !important;
+}
+
+/* ===================================
+   SIDE PANEL
+=================================== */
+
+.side-panel{
+
+    display:grid;
+
+    gap:20px;
+}
+
+.side-panel .card{
+
+    text-align:center;
+}
+
+/* ===================================
+   SIGNAL COLORS
+=================================== */
+
+.positive{
+
+    color:#10B981;
+
+    font-weight:700;
+}
+
+.negative{
+
+    color:#EF4444;
+
+    font-weight:700;
+}
+
+/* ===================================
+   PREDICTION
+=================================== */
+
+.prediction-section{
+
+    padding:25px;
+}
+
+.prediction-section .card{
+
+    text-align:center;
+}
+
+#prediction-probability{
+
+    color:#10B981;
+
+    font-weight:700;
+}
+
+#prediction-direction{
+
+    font-weight:700;
+}
+
+#target-price{
+
+    color:#60A5FA;
+
+    font-weight:700;
+}
+
+/* ===================================
+   SIGNALS
+=================================== */
+
+.signals-section{
+
+    padding:25px;
+}
+
+.signal-item{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:12px 0;
+
+    border-bottom:1px solid #1f2937;
+}
+
+.signal-item:last-child{
+
+    border-bottom:none;
+}
+
+.signal-coin{
+
+    font-weight:600;
+}
+
+.signal-badge{
+
+    font-weight:700;
+
+    letter-spacing:1px;
+}
+
+/* ===================================
+   TABLES
+=================================== */
+
+.market-overview{
+
+    padding:25px;
+}
+
+table{
+
+    width:100%;
+
+    border-collapse:collapse;
+}
+
+th{
+
+    text-align:left;
+
+    color:#9ca3af;
+
+    padding:12px;
+}
+
+td{
+
+    padding:12px;
+
+    border-top:1px solid #1f2937;
+}
+
+/* ===================================
+   GAINERS LOSERS
+=================================== */
+
+.gainers-section,
+.losers-section{
+
+    padding:25px;
+}
+
+.market-item{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:12px 0;
+
+    border-bottom:1px solid #1f2937;
+}
+
+.market-item:last-child{
+
+    border-bottom:none;
+}
+
+/* ===================================
+   WHALE
+=================================== */
+
+.whale-section{
+
+    padding:25px;
+}
+
+.whale-item{
+
+    padding:12px 0;
+
+    border-bottom:1px solid #1f2937;
+
+    color:#d1d5db;
+}
+
+.whale-item:last-child{
+
+    border-bottom:none;
+}
+
+/* ===================================
+   NEWS
+=================================== */
+
+.news-section{
+
+    padding:25px;
+}
+
+.news-item{
+
+    padding:12px 0;
+
+    border-bottom:1px solid #1f2937;
+
+    line-height:1.7;
+
+    color:#d1d5db;
+}
+
+.news-item:last-child{
+
+    border-bottom:none;
+}
+
+/* ===================================
+   PORTFOLIO
+=================================== */
+
+.portfolio-section{
+
+    padding:25px;
+}
+
+.portfolio-item{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:12px 0;
+
+    border-bottom:1px solid #1f2937;
+}
+
+.portfolio-item:last-child{
+
+    border-bottom:none;
+}
+
+.portfolio-total{
+
+    margin-top:15px;
+
+    padding-top:15px;
+
+    border-top:2px solid #1f2937;
+
+    color:#10B981;
+
+    font-size:20px;
+
+    font-weight:700;
+}
+
+/* ===================================
+   AI COMMENT
+=================================== */
+
+.ai-section{
+
+    padding:25px;
+}
+
+#comment{
+
+    line-height:1.8;
+
+    color:#d1d5db;
+}
+
+/* ===================================
+   FOOTER SPACING
+=================================== */
+
+.ai-section{
+
+    margin-bottom:40px;
+}
+
+/* ===================================
+   RESPONSIVE
+=================================== */
+
+@media(max-width:1200px){
+
+    .main-grid{
+
+        grid-template-columns:1fr;
+    }
+
+}
+
+@media(max-width:768px){
+
+    .navbar{
+
+        flex-direction:column;
+
+        gap:15px;
+    }
+
+    .hero h1{
+
+        font-size:42px;
+    }
+
+    .card{
+
+        padding:18px;
+    }
+
+    .chart-area canvas{
+
+        height:350px !important;
+    }
+
+}
+
+@media(max-width:480px){
+
+    .hero h1{
+
+        font-size:32px;
+    }
+
+    .logo{
+
+        font-size:20px;
+    }
+
+}
