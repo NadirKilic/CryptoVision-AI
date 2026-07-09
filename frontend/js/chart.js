@@ -1,12 +1,5 @@
-/* =====================================
-   CHART INSTANCE
-===================================== */
 
 let chartInstance = null;
-
-/* =====================================
-   DESTROY OLD CHART
-===================================== */
 
 function destroyChart() {
 
@@ -20,9 +13,6 @@ function destroyChart() {
 
 }
 
-/* =====================================
-   CREATE CHART
-===================================== */
 
 export function createChart(
 
@@ -179,10 +169,6 @@ export function createChart(
 
 }
 
-/* =====================================
-   UPDATE CHART
-===================================== */
-
 export function updateChart(
 
     labels,
@@ -209,10 +195,6 @@ export function updateChart(
     chartInstance.update();
 
 }
-
-/* =====================================
-   GET INSTANCE
-===================================== */
 
 export function getChartInstance() {
 

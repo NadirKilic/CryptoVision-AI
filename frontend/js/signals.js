@@ -1,6 +1,3 @@
-/* =====================================
-   SIGNAL ENGINE
-===================================== */
 
 function calculateSignal(
     rsi,
@@ -8,7 +5,6 @@ function calculateSignal(
     sma50
 ) {
 
-    /* STRONG BUY */
 
     if (
         sma20 > sma50 &&
@@ -23,7 +19,6 @@ function calculateSignal(
 
     }
 
-    /* STRONG SELL */
 
     if (
         sma20 < sma50 &&
@@ -37,7 +32,6 @@ function calculateSignal(
 
     }
 
-    /* HOLD */
 
     return {
         signal: "HOLD",
@@ -46,9 +40,6 @@ function calculateSignal(
 
 }
 
-/* =====================================
-   CREATE SIGNAL CARD
-===================================== */
 
 function createSignalCard(
     coin,
@@ -80,9 +71,6 @@ function createSignalCard(
 
 }
 
-/* =====================================
-   UPDATE UI
-===================================== */
 
 export function updateSignalsUI(
     signals
@@ -116,9 +104,6 @@ export function updateSignalsUI(
 
 }
 
-/* =====================================
-   BUILD SIGNAL LIST
-===================================== */
 
 export function generateSignals(
 

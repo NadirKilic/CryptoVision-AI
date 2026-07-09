@@ -1,6 +1,3 @@
-/* =====================================
-   DEFAULT PORTFOLIO
-===================================== */
 
 const portfolio = [
 
@@ -26,9 +23,6 @@ const portfolio = [
 
 ];
 
-/* =====================================
-   CALCULATE PORTFOLIO
-===================================== */
 
 export function calculatePortfolio(
 
@@ -65,9 +59,6 @@ export function calculatePortfolio(
 
 }
 
-/* =====================================
-   TOTAL VALUE
-===================================== */
 
 export function getTotalValue(
 
@@ -81,10 +72,6 @@ export function getTotalValue(
 
 }
 
-
-/* =====================================
-   UPDATE UI
-===================================== */
 
 export function updatePortfolioUI(
 

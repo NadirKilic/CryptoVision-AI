@@ -1,6 +1,3 @@
-/* =====================================
-   FEAR & GREED INDEX
-===================================== */
 
 export async function loadFearGreed() {
 

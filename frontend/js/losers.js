@@ -1,6 +1,4 @@
-/* =====================================
-   TOP LOSERS
-===================================== */
+
 
 export async function loadTopLosers() {
 
@@ -59,9 +57,7 @@ export async function loadTopLosers() {
 
 }
 
-/* =====================================
-   UI
-===================================== */
+
 
 function updateLosersUI(
     losers

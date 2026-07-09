@@ -1,6 +1,3 @@
-/* =====================================
-   MARKET SYMBOLS
-===================================== */
 
 const MARKET_COINS = [
 
@@ -11,9 +8,6 @@ const MARKET_COINS = [
 
 ];
 
-/* =====================================
-   LOAD MARKET OVERVIEW
-===================================== */
 
 export async function loadMarketOverview() {
 

@@ -1,6 +1,3 @@
-/* =====================================
-   AI PREDICTION ENGINE
-===================================== */
 
 export function generatePrediction(
 
@@ -14,7 +11,6 @@ export function generatePrediction(
 
     let probability = 50;
 
-    /* RSI FACTOR */
 
     if (rsi > 70) {
 
@@ -32,7 +28,6 @@ export function generatePrediction(
 
     }
 
-    /* SMA FACTOR */
 
     if (sma20 > sma50) {
 
@@ -45,12 +40,8 @@ export function generatePrediction(
 
     }
 
-    /* AI SCORE FACTOR */
-
     probability +=
         (aiScore - 50) * 0.5;
-
-    /* LIMIT */
 
     probability =
         Math.max(
@@ -81,7 +72,6 @@ export function generatePrediction(
 
     }
 
-    /* TARGET PRICE */
 
     let targetPrice =
         currentPrice;
@@ -118,9 +108,6 @@ export function generatePrediction(
 
 }
 
-/* =====================================
-   UPDATE UI
-===================================== */
 
 export function updatePredictionUI(
 

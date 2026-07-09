@@ -1,13 +1,7 @@
-/* =====================================
-   BINANCE API URL
-===================================== */
 
 const BINANCE_API =
     "https://api.binance.com/api/v3";
 
-/* =====================================
-   24H PRICE DATA
-===================================== */
 
 export async function getTickerData(
     symbol
@@ -59,9 +53,6 @@ export async function getTickerData(
 
 }
 
-/* =====================================
-   KLINE DATA
-===================================== */
 
 export async function getKlineData(
     symbol,
@@ -97,9 +88,6 @@ export async function getKlineData(
 
 }
 
-/* =====================================
-   PRICE ARRAY
-===================================== */
 
 export async function getPrices(
     symbol
@@ -119,9 +107,6 @@ export async function getPrices(
 
 }
 
-/* =====================================
-   LABEL ARRAY
-===================================== */
 
 export async function getLabels(
     symbol
@@ -150,9 +135,6 @@ export async function getLabels(
 
 }
 
-/* =====================================
-   FULL MARKET DATA
-===================================== */
 
 export async function getMarketData(
     symbol

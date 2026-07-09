@@ -1,6 +1,3 @@
-/* =====================================
-   RSI
-===================================== */
 
 export function calculateRSI(
     prices,
@@ -55,9 +52,6 @@ export function calculateRSI(
 
 }
 
-/* =====================================
-   SMA
-===================================== */
 
 export function calculateSMA(
     prices,

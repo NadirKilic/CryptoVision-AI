@@ -1,6 +1,3 @@
-/* =====================================
-   AI NEWS GENERATOR
-===================================== */
 
 export function generateNews(
 
@@ -61,9 +58,6 @@ export function generateNews(
 
 }
 
-/* =====================================
-   UPDATE NEWS UI
-===================================== */
 
 export function updateNewsUI(
 

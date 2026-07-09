@@ -1,6 +1,3 @@
-/* =====================================
-   TOP GAINERS
-===================================== */
 
 export async function loadTopGainers() {
 
@@ -59,9 +56,6 @@ export async function loadTopGainers() {
 
 }
 
-/* =====================================
-   UI
-===================================== */
 
 function updateGainersUI(
     gainers

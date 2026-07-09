@@ -1,6 +1,3 @@
-/* =====================================
-   AI SCORE
-===================================== */
 
 export function calculateAIScore(
     rsi,
@@ -10,7 +7,6 @@ export function calculateAIScore(
 
     let score = 50;
 
-    /* RSI */
 
     if (rsi > 70) {
 
@@ -33,7 +29,6 @@ export function calculateAIScore(
 
     }
 
-    /* SMA */
 
     if (sma20 > sma50) {
 
@@ -55,9 +50,6 @@ export function calculateAIScore(
 
 }
 
-/* =====================================
-   SIGNAL
-===================================== */
 
 export function getSignal(
     sma20,
@@ -80,9 +72,6 @@ export function getSignal(
 
 }
 
-/* =====================================
-   MARKET STATUS
-===================================== */
 
 export function getTrend(
     sma20,
@@ -105,9 +94,6 @@ export function getTrend(
 
 }
 
-/* =====================================
-   AI COMMENT
-===================================== */
 
 export function generateComment(
     rsi,

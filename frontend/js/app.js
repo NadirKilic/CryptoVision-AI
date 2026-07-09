@@ -1,6 +1,3 @@
-/* =====================================
-   IMPORTS
-===================================== */
 
 import {
     getTickerData,
@@ -78,15 +75,9 @@ import {
 }
 from "./portfolio.js";
 
-/* =====================================
-   STATE
-===================================== */
 
 let selectedCoin = "BTCUSDT";
 
-/* =====================================
-   LAST UPDATE
-===================================== */
 
 function updateTime() {
 
@@ -108,17 +99,11 @@ function updateTime() {
 
 }
 
-/* =====================================
-   DASHBOARD
-===================================== */
 
 async function loadDashboard() {
 
     try {
 
-        /* =====================
-           TICKER
-        ===================== */
 
         const ticker =
             await getTickerData(
@@ -159,10 +144,6 @@ async function loadDashboard() {
             ? "#10B981"
             : "#EF4444";
 
-        /* =====================
-           MARKET DATA
-        ===================== */
-
         const marketData =
             await getMarketData(
                 selectedCoin
@@ -173,10 +154,6 @@ async function loadDashboard() {
 
         const labels =
             marketData.labels;
-
-        /* =====================
-           INDICATORS
-        ===================== */
 
         const rsi =
             calculateRSI(
@@ -206,10 +183,6 @@ async function loadDashboard() {
         document.getElementById(
             "sma50"
         ).innerText = sma50;
-
-        /* =====================
-           AI
-        ===================== */
 
         const aiScore =
             calculateAIScore(
@@ -256,10 +229,6 @@ async function loadDashboard() {
                 aiScore
             );
 
-        /* =====================
-           CHART
-        ===================== */
-
         createChart(
 
             "btcChart",
@@ -271,10 +240,6 @@ async function loadDashboard() {
             selectedCoin
 
         );
-
-        /* =====================
-           AI PREDICTION
-        ===================== */
 
         const prediction =
             generatePrediction(
@@ -294,10 +259,6 @@ async function loadDashboard() {
         updatePredictionUI(
             prediction
         );
-
-        /* =====================
-           MULTI SIGNALS
-        ===================== */
 
         const signals =
             generateSignals([
@@ -336,33 +297,13 @@ async function loadDashboard() {
             signals
         );
 
-        /* =====================
-           MARKET OVERVIEW
-        ===================== */
-
         await loadMarketOverview();
-
-        /* =====================
-           FEAR GREED
-        ===================== */
 
         await loadFearGreed();
 
-        /* =====================
-           TOP GAINERS
-        ===================== */
-
         await loadTopGainers();
 
-        /* =====================
-           TOP LOSERS
-        ===================== */
-
         await loadTopLosers();
-
-        /* =====================
-           WHALES
-        ===================== */
 
         const whales =
             generateWhaleActivity(
@@ -379,10 +320,6 @@ async function loadDashboard() {
             whales
         );
 
-        /* =====================
-           NEWS
-        ===================== */
-
         const news =
             generateNews(
 
@@ -397,10 +334,6 @@ async function loadDashboard() {
         updateNewsUI(
             news
         );
-
-        /* =====================
-           PORTFOLIO
-        ===================== */
 
         const portfolio =
             calculatePortfolio(
@@ -420,10 +353,6 @@ async function loadDashboard() {
 
         );
 
-        /* =====================
-           TIME
-        ===================== */
-
         updateTime();
 
     }
@@ -437,10 +366,6 @@ async function loadDashboard() {
     }
 
 }
-
-/* =====================================
-   COIN CHANGE
-===================================== */
 
 document
 .getElementById(
@@ -458,15 +383,7 @@ document
     }
 );
 
-/* =====================================
-   INITIAL LOAD
-===================================== */
-
 loadDashboard();
-
-/* =====================================
-   AUTO REFRESH
-===================================== */
 
 setInterval(
     loadDashboard,

@@ -1,6 +1,4 @@
-/* =====================================
-   WHALE ACTIVITY ENGINE
-===================================== */
+
 
 export function generateWhaleActivity(
 
@@ -48,9 +46,6 @@ export function generateWhaleActivity(
 
 }
 
-/* =====================================
-   UPDATE UI
-===================================== */
 
 export function updateWhaleUI(
 
