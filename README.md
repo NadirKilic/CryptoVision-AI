@@ -40,3 +40,8 @@ AI Powered Cryptocurrency Analysis Platform
 
 \- Chart.js
 
+# CryptoPulse V6
+
+Professional Cryptocurrency Analysis Dashboard
+
+Created and Maintained by Nadir KILIÇ

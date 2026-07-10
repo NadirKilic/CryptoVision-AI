@@ -1,3 +1,15 @@
+/*
+==================================================
+  CryptoVision AI Pro
+  Advanced Cryptocurrency Analysis Platform
+
+  Developed by Nadir KILIÇ
+  GitHub: https://github.com/NadirKilic
+  Year: 2026
+
+  © All Rights Reserved
+==================================================
+*/
 
 import {
     getTickerData,
@@ -388,4 +400,21 @@ loadDashboard();
 setInterval(
     loadDashboard,
     30000
+);
+
+console.log(`
+██████╗  █████╗ ██████╗ ███████╗██╗  ██╗
+██╔══██╗██╔══██╗██╔══██╗██╔════╝╚██╗██╔╝
+██████╔╝███████║██████╔╝█████╗   ╚███╔╝
+██╔══██╗██╔══██║██╔══██╗██╔══╝   ██╔██╗
+██║  ██║██║  ██║██║  ██║███████╗██╔╝ ██╗
+╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝
+
+CryptoVision AI Pro
+Developed by Nadir KILIÇ
+`);
+
+console.log(
+  "%cCryptoVision AI Pro | Developed by Nadir KILIÇ",
+  "color:#00ff88;font-size:18px;font-weight:bold;"
 );
